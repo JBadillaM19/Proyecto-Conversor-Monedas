@@ -1,4 +1,15 @@
 package com.aluracursos.conversormonedas;
 
-public record ResultadoConversion(Double conversion_result, Double conversion_rate) {
+import com.google.gson.annotations.SerializedName;
+
+public record ResultadoConversion(
+        @SerializedName("result")
+        String result,
+        @SerializedName("conversion_result")
+        Double conversion_result,
+
+        @SerializedName("conversion_rate")
+        Double conversion_rate) {
+
+
 }
