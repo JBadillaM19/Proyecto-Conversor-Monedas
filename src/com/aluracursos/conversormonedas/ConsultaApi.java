@@ -8,11 +8,14 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConsultaApi {
+
+    private static final String API_KEY = "a558f018878e62018cebc093";
+
     public ResultadoConversion buscarConversion(String monedaOrigen, String monedaCambio, Double monto)
     throws IOException, InterruptedException {
 
-        String direccionApi = String.format("https://v6.exchangerate-api.com/v6/a558f018878e62018cebc093/pair/%s/%s/%.2f",
-                monedaOrigen, monedaCambio, monto);
+        String direccionApi = String.format("https://v6.exchangerate-api.com/v6/%s/pair/%s/%s/%.2f",
+                 API_KEY, monedaOrigen, monedaCambio, monto);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         // Creando cliente HTTP
@@ -43,7 +46,7 @@ public class ConsultaApi {
             }
 
             return conversion;
-        //return gson.fromJson(json, ResultadoConversion.class);
+
 
 
 

@@ -77,7 +77,7 @@ public class Principal {
 
         //Se muestra el resultado de la conversión (La API hace el cálculo)
         System.out.println("\n📈Resultado de la conversión:\n");
-        System.out.printf("El resultado de convertir %.2f %s (dolares) es: %.2f %s (colones)\n\n",
+        System.out.printf("El resultado de convertir %.2f %s es: %.2f %s\n\n",
                            valor, monedaOrigen, resultado, monedaCambio);
     }
 
